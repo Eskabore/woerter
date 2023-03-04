@@ -1,0 +1,33 @@
+This is a C program that reads words from a file, stores them in an array, and provides various options to manipulate and search them. The program reads words from a file named "woerter.txt", which should be located in the same directory as the executable.
+
+The program starts by defining a constant ANZAHL_WOERTER (number of words), which is currently set to 3500 but can be changed by commenting/uncommenting different #define statements.
+
+The program reads the words from the file using the woerterEinlesen function, which opens the file in read-only mode, reads the words one by one using fscanf, and stores them in the woerter array. The function returns the number of words read from the file.
+
+The program then provides a menu with several options, including:
+
+ausgeben: prints the first 10 words from the woerter array.
+suchen: prompts the user to enter a word to search for and uses the lineareSuche function to search for the word in the woerter array. If the word is found, the function returns a pointer to the word; otherwise, it returns NULL.
+umdrehen: reverses the order of the words in the woerter array.
+bubblesort: sorts the words in the woerter array using the bubblesort algorithm.
+gnomesort: sorts the words in the woerter array using the gnomesort algorithm.
+insertionsort: sorts the words in the woerter array using the insertionsort algorithm.
+selectionsort: sorts the words in the woerter array using the selectionsort algorithm.
+bin. suchen: prompts the user to enter a word to search for and uses the binaereSuche function to search for the word in the woerter array. This function assumes that the array is sorted in ascending order.
+quicksort: sorts the words in the woerter array using the quicksort algorithm.
+Sortierung pruefen: checks if the words in the woerter array are sorted in ascending order.
+worst case erzeugen: creates the worst-case scenario for the quicksort algorithm with the pivot element in the middle.
+The program also defines several helper functions, including:
+
+woerterAusgeben: prints the first n words from the woerter array.
+lineareSuche: searches for a word in the woerter array using linear search and returns a pointer to the word if it is found; otherwise, it returns NULL.
+woerterUmdrehen: reverses the order of the words in the woerter array.
+bubblesort, gnomesort, insertionsort, selectionsort: sorts the words in the woerter array using the respective algorithms.
+quicksort: sorts the words in the woerter array using the quicksort algorithm.
+binaereSuche: searches for a word in the woerter array using binary search and returns a pointer to the word if it is found; otherwise, it returns NULL.
+check: checks if the words in the woerter array are sorted in ascending order.
+Overall, this program provides a basic implementation of several common algorithms for manipulating and searching arrays of strings. However, it has several limitations and potential issues, including:
+
+The program assumes that the words are stored in a file named "woerter.txt" in the same directory as the executable.
+The program does not perform any input validation, which can lead to buffer overflows and other security issues.
+The program uses several C library functions that are considered unsafe and can lead to buffer overflows and other security issues, such as scanf,
