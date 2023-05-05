@@ -27,7 +27,7 @@
 //		if ('<' == wort[0]) {
 //			break;
 //		}
-//		woerter[anzahl] = (char*)malloc(strlen(wort) + 1); // String-Abschlusszeichen berücksichtigen
+//		woerter[anzahl] = (char*)malloc(strlen(wort) + 1); // String-Abschlusszeichen berÃ¼cksichtigen
 //		if (woerter[anzahl] != NULL) {
 //			strcpy(woerter[anzahl], wort);
 //			anzahl++;
@@ -46,6 +46,8 @@
 //	return anzahl;
 //}
 
+int berechneSumme(int num1, int num2)
+	
 int woerterEinlesen(char** woerter)
 {
 	char wort[100];
@@ -59,7 +61,7 @@ int woerterEinlesen(char** woerter)
 			if (EOF == gelesen) {
 				break;
 			}
-			woerter[anzahl] = (char*)malloc(strlen(wort) + 1); // String-Abschlusszeichen berücksichtigen
+			woerter[anzahl] = (char*)malloc(strlen(wort) + 1); // String-Abschlusszeichen berÃ¼cksichtigen
 			if (woerter[anzahl] != NULL) {
 				strcpy(woerter[anzahl], wort);
 				anzahl++;
@@ -200,7 +202,7 @@ selectionsort(char** woerter, int anzahl)
 	char* temp;
 	int i, j, jmax;
 	for (i = anzahl - 1; i > 0; i--) {
-		jmax = i; // bei sortierten Wörtern ist das das Maximum
+		jmax = i; // bei sortierten WÃ¶rtern ist das das Maximum
 		temp = woerter[jmax];
 		for (j = 0; j < i; j++) {
 			if (strcmp(temp, woerter[j]) < 0) { 
@@ -245,7 +247,7 @@ quicksort(char** woerter, int anzahl)
 		}
 		else {
 			// es gilt j < i   (j == i kann nicht vorkommen)
-			// wenn nötig das pivotElement zwischen die Teilbereiche legen
+			// wenn nÃ¶tig das pivotElement zwischen die Teilbereiche legen
 			if (pivotIndex < j) {
 				temp = woerter[pivotIndex];
 				woerter[pivotIndex] = woerter[j];
@@ -289,8 +291,8 @@ int check(char** woerter, int anzahl) {
 	return 0;
 }
 
-// liefert den worst case für quicksort mit mittlerem Pivot-Element
-// Voraussetzung: woerter müssen sortiert sein
+// liefert den worst case fÃ¼r quicksort mit mittlerem Pivot-Element
+// Voraussetzung: woerter mÃ¼ssen sortiert sein
 worst_case(char** woerter, int anzahl) {
 	int i, j;
 	char* temp;
@@ -309,6 +311,12 @@ worst_case(char** woerter, int anzahl) {
 
 main()
 {
+	FILE *file = fopen("woerter.txt", "r");
+	if (file == NULL)
+	{
+		fprintf(stderr, "Fehler: Datei konnte nicht geÃ¶ffnet werden.\n");
+		exit(1);
+	}
 	char* woerter[ANZAHL_WOERTER];
 	char gesuchtesWort[100];
 	char* ptr = NULL;
@@ -389,7 +397,7 @@ main()
 			printf("Woerter alphabetisch sortiert\n");
 			break;
 		case 10:
-			/* Sortierung prüfen */
+			/* Sortierung prÃ¼fen */
 			if (check(woerter, anzahl)) {
 				printf("Sortierfehler\n");
 			}
