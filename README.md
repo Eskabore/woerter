@@ -30,7 +30,7 @@ Das Programm bietet folgende Funktionen:
 
 ## Autor
 
-Dieses Programm wurde von [Name des Autors] geschrieben.
+Dieses Programm wurde von 'eskabore' turquinjl@gmail.com geschrieben.
 
 ## Lizenz
 
